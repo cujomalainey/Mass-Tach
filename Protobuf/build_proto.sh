@@ -1,0 +1,1 @@
+protoc SensorData.proto --nanopb_out=../Sensor-Relay/src/ --python_out=../Local-Server/ --python_out=../Tools/Sensor-Relay-Interface/ -I/usr/local/Cellar/nanopb-generator/0.3.6_2/libexec/proto/ -I.

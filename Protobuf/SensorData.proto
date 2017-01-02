@@ -1,0 +1,24 @@
+syntax = "proto3";
+import "nanopb.proto"; 
+
+// Our address book file is just one of these.
+message ChannelConfig {
+    enum SensorType {
+        BIKE_CADENCE = 0;
+        BIKE_SPEED = 1;
+        HR_MONITOR = 2;
+    }
+
+    repeated int32 channel_serial_number = 1 [(nanopb).max_count = 15];
+    repeated SensorType channel_type = 2 [(nanopb).max_count = 15];
+}
+
+message SensorData {
+    enum ConnnectionState {
+        DISCONNECTED = 0;
+        CONNECTED = 1;
+    }
+
+    repeated int32 channel_counts = 1 [(nanopb).max_count = 15];
+    repeated ConnnectionState channel_state = 2 [(nanopb).max_count = 15];
+}
