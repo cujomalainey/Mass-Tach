@@ -112,6 +112,10 @@ static void debug_ant_event_message(uint8_t code)
             DEBUG_SERIAL_PORT.println("EVENT_CHANNEL_CLOSED");
             break;
 
+        case EVENT_CHANNEL_COLLISION:
+            DEBUG_SERIAL_PORT.println("EVENT_CHANNEL_COLLISION");
+            break;
+
         default:
             DEBUG_SERIAL_PORT.println(code);
             break;
