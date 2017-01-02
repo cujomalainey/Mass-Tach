@@ -7,6 +7,7 @@
 #define DEBUG_STARTUP_DELAY 5000
 
 static void debug_ant_event_message(uint8_t code);
+static void debug_parse_modem_status(uint8_t code);
 
 void debug_init()
 {
@@ -145,14 +146,7 @@ void debug_xbee_response(XBeeResponse message)
             ModemStatusResponse msr = ModemStatusResponse();
             message.getModemStatusResponse(msr);
             DEBUG_SERIAL_PORT.print("Modem Status: ");
-            DEBUG_SERIAL_PORT.println(msr.getStatus());
-    //             "HARDWARE_RESET",
-    // "WATCHDOG_TIMER_RESET",
-    // "ASSOCIATED",
-    // "DISASSOCIATED",
-    // "SYNCHRONIZATION_LOST",
-    // "COORDINATOR_REALIGNMENT",
-    // "COORDINATOR_STARTED"
+            debug_parse_modem_status(msr.getStatus());
             break;
         }
 
@@ -169,6 +163,45 @@ void debug_xbee_response(XBeeResponse message)
             DEBUG_SERIAL_PORT.println(apiId);
             break;
         }
+    }
+}
+
+static void debug_parse_modem_status(uint8_t code)
+{
+    switch (code)
+    {
+        case HARDWARE_RESET:
+            DEBUG_SERIAL_PORT.println("HARDWARE_RESET");
+            break;
+
+        case WATCHDOG_TIMER_RESET:
+            DEBUG_SERIAL_PORT.println("WATCHDOG_TIMER_RESET");
+            break;
+
+        case ASSOCIATED:
+            DEBUG_SERIAL_PORT.println("ASSOCIATED");
+            break;
+
+        case DISASSOCIATED:
+            DEBUG_SERIAL_PORT.println("DISASSOCIATED");
+            break;
+
+        case SYNCHRONIZATION_LOST:
+            DEBUG_SERIAL_PORT.println("SYNCHRONIZATION_LOST");
+            break;
+
+        case COORDINATOR_REALIGNMENT:
+            DEBUG_SERIAL_PORT.println("COORDINATOR_REALIGNMENT");
+            break;
+
+        case COORDINATOR_STARTED:
+            DEBUG_SERIAL_PORT.println("COORDINATOR_STARTED");
+            break;
+
+        default:
+            DEBUG_SERIAL_PORT.println(code);
+            break;
+
     }
 }
 
