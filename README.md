@@ -1,9 +1,6 @@
 # Mass-Tach
 Massive Wireless Tachometer System
 
-Status:
-[![Build Status](https://travis-ci.org/cujomalainey/Mass-Tach.svg?branch=master)](https://travis-ci.org/cujomalainey/Mass-Tach)
-
 Goal:
 Build a completely wireless system which can track distance of station bikes of many types that can run for 48 hours straight minimum.
 
