@@ -1,12 +1,10 @@
 #ifndef ANT_CONTROLLER
 #define ANT_CONTROLLER
-#define ANT_NUM_CHANNELS 15
 
 enum ant_device_type
 {
 	ANT_DEVICE_BIKE_CADENCE = 0,
 	ANT_DEVICE_BIKE_SPEED = 1,
-	ANT_DEVICE_HR_MONITOR = 2
 };
 
 /*

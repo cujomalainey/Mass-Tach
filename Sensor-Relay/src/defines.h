@@ -10,8 +10,12 @@ extern HardwareSerial Serial1;
  * Pin and Harware Defines
  */
 // TODO update for feather
-#define ANT_RESET_PIN
-#define ANT_SLEEP_PIN
+#define ANT_RESET_PIN -1
+#define ANT_SLEEP_PIN -1
+#define ANT_SUSPEND_PIN -1
+#define ANT_BR1_PIN -1
+#define ANT_BR2_PIN -1
+#define ANT_BR3_PIN -1
 
 #define DEBUG_SERIAL Serial
 #define ANT_SERIAL   Serial1
