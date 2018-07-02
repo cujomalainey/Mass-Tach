@@ -12,8 +12,6 @@
 /*
  * ANT+ Defines
  */
-#define CADENCE_SENSOR_DEVICE_TYPE 122
-#define SPEED_SENSOR_DEVICE_TYPE   123
 #define ANT_PLUS_FREQUENCY         57
 
 #define ANT_PLUS_NETWORK_ID        0
@@ -21,9 +19,6 @@
 
 #define DATAPAGE_SENSOR_COUNTS_ID  0
 #define PAIRING_BIT_MASK 0x80
-
-#define MILLIS_TO_SECONDES 1000
-#define SECONDS_TO_MINUTES 60
 
 const static uint8_t ANT_PLUS_NETWORK_KEY[] = ANT_PLUS_NETWORK_KEY_SECRET;
 
@@ -44,9 +39,8 @@ typedef struct {
 
 // Indices match ant_device_type
 const static ant_sensor_config_type ant_channel_config[] = {
-    {122, 8102}, // BIKE_CADENCE
-    {123, 8118}, // BIKE_SPEED
-    {120, 8070} // HR_MONITOR
+    {CADENCE_SENSOR_DEVICE_TYPE, 8102}, // BIKE_CADENCE
+    {SPEED_SENSOR_DEVICE_TYPE, 8118}, // BIKE_SPEED
 };
 
 static ant_channel_status_type ant_channel_status[ANT_NUM_CHANNELS];
