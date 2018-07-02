@@ -22,10 +22,8 @@
 #define DATAPAGE_SENSOR_COUNTS_ID  0
 #define PAIRING_BIT_MASK 0x80
 
-#define ANT_POLLING_PERIOD 0.1 //minutes
 #define MILLIS_TO_SECONDES 1000
 #define SECONDS_TO_MINUTES 60
-#define SAMPLE_DELAY_IN_MILLIS MILLIS_TO_SECONDES*SECONDS_TO_MINUTES*ANT_POLLING_PERIOD
 
 const static uint8_t ANT_PLUS_NETWORK_KEY[] = ANT_PLUS_NETWORK_KEY_SECRET;
 
@@ -67,7 +65,6 @@ void ant_init()
     digitalWrite(ANT_RESET_PIN, HIGH);
 
     ANT_SERIAL_PORT.begin(BAUD_RATE);
-    ANT_SERIAL_PORT.attachCts(ANT_SERIAL_PORT_CTS_PIN);
     ant.setSerial(ANT_SERIAL_PORT);
 
     ant_reset();
@@ -86,17 +83,6 @@ void ant_tick()
     ant_service_data();
 }
 
-void ant_configure_radio(ChannelConfig* config) {
-    num_active_channels = config->channel_serial_number_count;
-    next_data_transmit = millis() + SAMPLE_DELAY_IN_MILLIS;
-    for (uint8_t i = 0; i < config->channel_serial_number_count; i++) {
-        if (config->channel_serial_number[i] != 0)
-        {
-            ant_setup_channel(i, config->channel_serial_number[i], (ant_device_type)config->channel_type[i]);
-        }
-    }
-}
-
 static void ant_check_messages()
 {
     ant.readPacket();
@@ -105,7 +91,6 @@ static void ant_check_messages()
         ant_handle_message();
     }
     else if (ant.getResponse().isError()) {
-        debug_ant_error_code(ant.getResponse().getErrorCode());
     }
 }
 
@@ -113,8 +98,6 @@ static void ant_service_data()
 {
     if (millis() >= next_data_transmit && num_active_channels != 0)
     {
-        next_data_transmit += SAMPLE_DELAY_IN_MILLIS;
-        ant_fill_data(&data);
     }
 }
 
@@ -124,8 +107,6 @@ static void ant_setup_channel(uint8_t channel, uint32_t serial_number, ant_devic
     ChannelId ci;
     ChannelPeriod cp;
     ChannelRfFrequency crf;
-
-    debug_ant_config_channel(channel, (uint16_t)(serial_number & 0xFFFF), device_type);
 
     ac = AssignChannel();
     ac.setChannel(channel);
@@ -168,7 +149,6 @@ static void ant_open_channel(uint8_t channel)
 
 static void ant_handle_message()
 {
-    debug_ant_response(ant.getResponse());
     uint8_t msgId = ant.getResponse().getMsgId();
     switch (msgId)
     {

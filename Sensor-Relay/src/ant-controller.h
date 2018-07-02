@@ -24,9 +24,4 @@ void ant_reset();
  */
 void ant_tick();
 
-/*
- * Configure radio with specified data
- */
-void ant_configure_radio(ChannelConfig* config);
-
 #endif
