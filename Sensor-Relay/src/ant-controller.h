@@ -1,6 +1,5 @@
-#if (!defined(ANT_CONTROLLER))
+#ifndef ANT_CONTROLLER
 #define ANT_CONTROLLER
-#include "SensorData.pb.h"
 #define ANT_NUM_CHANNELS 15
 
 enum ant_device_type

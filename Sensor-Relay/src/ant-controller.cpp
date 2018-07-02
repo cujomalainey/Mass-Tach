@@ -6,10 +6,7 @@
 #include <Arduino.h>
 #include <ANT.h>
 #include "defines.h"
-#include "debug.h"
 #include "ant-controller.h"
-#include "xbee-controller.h"
-#include "SensorData.pb.h"
 #include "secret.h"
 
 /*
@@ -63,7 +60,6 @@ static void ant_service_data();
 static void ant_parse_broadcast_data(uint8_t channel_id, uint8_t* data);
 static void ant_parse_channel_event(uint8_t channel_id, uint8_t code);
 static void ant_open_channel(uint8_t channel);
-static void ant_fill_data(SensorData* data);
 
 void ant_init()
 {
@@ -118,10 +114,7 @@ static void ant_service_data()
     if (millis() >= next_data_transmit && num_active_channels != 0)
     {
         next_data_transmit += SAMPLE_DELAY_IN_MILLIS;
-        SensorData data = SensorData_init_default;
         ant_fill_data(&data);
-        debug_ant_data_sent(&data);
-        xbee_send_data(&data);
     }
 }
 
@@ -249,16 +242,4 @@ static void ant_parse_channel_event(uint8_t channel_id, uint8_t code)
         default:
             break;
     }
-}
-
-static void ant_fill_data(SensorData* data)
-{
-    for (uint8_t i = 0; i < num_active_channels; i++)
-    {
-        data->channel_counts[i] = ant_channel_status[i].current_count;
-        ant_channel_status[i].current_count = 0;
-        data->channel_state[i] = ant_channel_status[i].active ? SensorData_ConnnectionState_CONNECTED : SensorData_ConnnectionState_DISCONNECTED;
-    }
-    data->channel_counts_count = num_active_channels;
-    data->channel_state_count = num_active_channels;
 }
