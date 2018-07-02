@@ -58,8 +58,9 @@ void ant_init()
     pinMode(ANT_RESET_PIN, OUTPUT);
     digitalWrite(ANT_RESET_PIN, HIGH);
 
-    ANT_SERIAL_PORT.begin(BAUD_RATE);
-    ant.setSerial(ANT_SERIAL_PORT);
+    // TODO move to dynamic baud rate
+    ANT_SERIAL.begin(9600);
+    ant.setSerial(ANT_SERIAL);
 
     ant_reset();
 }
