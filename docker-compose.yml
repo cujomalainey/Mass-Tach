@@ -3,8 +3,21 @@ services:
         mqtt:
                 image: eclipse-mosquitto
                 restart: always
+                hostname: "mqtt"
                 ports:
                         - "1883:1883"
                         - "9001:9001"
                 volumes:
                         - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+        dispatch:
+                image: golang:alpine
+                volumes:
+                        - ./dispatch:/go/src/dispatch
+                working_dir: /go/src/dispatch
+                command: go run main.go
+                ports:
+                        - "8080:8080"
+                depends_on:
+                        - mqtt
+                environment:
+                        MQTT_BROKER: mqtt:1883
