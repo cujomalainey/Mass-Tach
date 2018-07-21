@@ -39,8 +39,8 @@ typedef struct {
 
 // Indices match ant_device_type
 const static ant_sensor_config_type ant_channel_config[] = {
-    {CADENCE_SENSOR_DEVICE_TYPE, 8102}, // BIKE_CADENCE
-    {SPEED_SENSOR_DEVICE_TYPE, 8118}, // BIKE_SPEED
+    {CADENCE_SENSOR_DEVICE_TYPE, CADENCE_SENSOR_TRANSMISSION_PERIOD}, // BIKE_CADENCE
+    {SPEED_SENSOR_DEVICE_TYPE, SPEED_SENSOR_TRANSMISSION_PERIOD}, // BIKE_SPEED
 };
 
 static ant_channel_status_type ant_channel_status[ANT_NUM_CHANNELS];
