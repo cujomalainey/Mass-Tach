@@ -1,1 +1,0 @@
-#define VBATPIN A13

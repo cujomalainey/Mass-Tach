@@ -5,9 +5,11 @@
 *************************************************************/
 #include <Arduino.h>
 #include <ANT.h>
-#include "defines.h"
+#include "define.h"
+#include "config.h"
 #include "ant-controller.h"
 #include "secret.h"
+#include <SerialDebug.h>
 
 /*
  * ANT+ Defines
@@ -22,7 +24,7 @@
 
 const static uint8_t ANT_PLUS_NETWORK_KEY[] = ANT_PLUS_NETWORK_KEY_SECRET;
 
-static Ant ant = Ant();
+static AntWithCallbacks ant = AntWithCallbacks();
 static uint8_t num_active_channels = 0;
 static uint32_t next_data_transmit = 0;
 
@@ -55,6 +57,7 @@ static void ant_open_channel(uint8_t channel);
 
 void ant_init()
 {
+    DEBUG("ANT: Init Started");
     pinMode(ANT_RESET_PIN, OUTPUT);
     digitalWrite(ANT_RESET_PIN, HIGH);
 
@@ -63,6 +66,7 @@ void ant_init()
     ant.setSerial(ANT_SERIAL);
 
     ant_reset();
+    DEBUG("ANT: Init Complete");
 }
 
 void ant_reset()
@@ -202,16 +206,16 @@ static void ant_parse_channel_event(uint8_t channel_id, uint8_t code)
 {
     switch (code)
     {
-        case RESPONSE_NO_ERROR:
-        case EVENT_RX_FAIL:
+        case STATUS_RESPONSE_NO_ERROR:
+        case STATUS_EVENT_RX_FAIL:
             break;
 
-        case EVENT_RX_SEARCH_TIMEOUT:
+        case STATUS_EVENT_RX_SEARCH_TIMEOUT:
             // send message back to server (once error reporting implemented) that sensor was lost and retry
             ant_open_channel(channel_id);
             break;
 
-        case EVENT_CHANNEL_CLOSED:
+        case STATUS_EVENT_CHANNEL_CLOSED:
             break;
 
         default:

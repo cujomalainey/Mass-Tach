@@ -1,11 +1,11 @@
-#ifndef CONSTANTS_h
-#define CONSTANTS_h
+#ifndef DEFINE_h
+#define DEFINE_h
 
 /**********
  * Contains system/build independent configuration details
  *********/
 
-#define MILLIS_TO_SECONDES 1000
+#define MILLIS_TO_SECONDS 1000
 #define SECONDS_TO_MINUTES 60
 
 #define ANT_NUM_CHANNELS 15
@@ -15,9 +15,8 @@
 #define SPEED_SENSOR_DEVICE_TYPE   123
 #define SPEED_SENSOR_TRANSMISSION_PERIOD 8118
 
-#define USB_DEBUG_LEVEL_INFO 3
-#define USB_DEBUG_LEVEL_WARNING 2
-#define USB_DEBUG_LEVEL_ERROR 1
-#define USB_DEBUG_LEVEL_NONE 0
+#define DISPLAY_ADDR 0x70
 
-#endif // CONSTANTS_h
+// #define SERIAL_DEBUG_SEPARATOR ": "
+
+#endif // DEFINE_h
