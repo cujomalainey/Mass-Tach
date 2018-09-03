@@ -6,10 +6,6 @@
 #include <SerialDebug.h>
 #include <Preferences.h>
 
-#if defined(ESP32)
-HardwareSerial Serial1(2);
-#endif
-
 void setup() {
     SERIAL_DEBUG_SETUP(SERIAL_DEBUG_BAUD);
     display_init();
