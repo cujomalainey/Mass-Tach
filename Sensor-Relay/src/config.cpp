@@ -5,7 +5,7 @@ Preferences pref;
 
 void config_init() {
     DEBUG("Config: Init started");
-    pref.begin("identity", false);
+    pref.begin("identity");
     DEBUG("Config: I am ", whoami());
     DEBUG("Config: Init completed");
 }
