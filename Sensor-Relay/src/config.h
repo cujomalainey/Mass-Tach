@@ -26,6 +26,10 @@
 
 #define SERIAL_DEBUG true
 
-uint8_t whoami(void);
-
+int whoami(void);
+size_t get_antplus_key(uint8_t* buf);
+size_t get_mqtt_url(char* buf);
+size_t get_wifi_ssid(char* buf);
+size_t get_wifi_psk(char* buf);
+size_t get_last_config_date(char* buf);
 #endif // CONFIG_h
