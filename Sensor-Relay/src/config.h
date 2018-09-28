@@ -3,8 +3,6 @@
 
 #include <Arduino.h>
 
-extern HardwareSerial Serial1;
-
 /*
  * Pin and Harware Defines
  */
