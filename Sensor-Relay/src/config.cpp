@@ -1,14 +1,6 @@
 #include "debug.h"
 #include <Preferences.h>
 
-#define MAX_STR_LEN 60
-#define INVALID_DEVICE_ID -1
-#define ANTPLUS_KEY_SIZE 16
-#define MQTT_URL_MAX_SIZE MAX_STR_LEN
-#define CONFIG_DATE_MAX_SIZE MAX_STR_LEN
-#define WIFI_SSID_MAX_SIZE MAX_STR_LEN
-#define WIFI_PSK_MAX_SIZE MAX_STR_LEN
-
 Preferences pref;
 
 void config_init() {

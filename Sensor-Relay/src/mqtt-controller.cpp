@@ -59,7 +59,10 @@ void mqtt_init() {
 }
 
 void mqtt_tick() {
-  client.loop();
+  // TODO handle delay
+  if (!client.loop()) {
+    // TODO handle errors
+  }
   delay(10);  // <- fixes some issues with WiFi stability
 
   if (!client.connected()) {
