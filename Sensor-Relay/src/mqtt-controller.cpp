@@ -12,12 +12,14 @@
 #include <SPI.h>
 #include <Adafruit_GFX.h>
 #include <MQTT.h>
+#include <Battery.h>
 #include "mqtt-controller.h"
 #include "debug.h"
 #include "secret.h"
 
 WiFiClient net;
 MQTTClient client;
+Battery battery(3000, 4200, A13);
 
 unsigned long lastMillis = 0;
 
@@ -35,7 +37,10 @@ void connect() {
   }
   DEBUG("MQTT: connected to MQTT server");
 
-  client.subscribe("/hello");
+  DEBUG("BATTERY: Setting Up...");
+  battery.begin(3300, 2.0, &sigmoidal);
+  // TODO something to identify we booted
+  client.publish("/hello", "");
 }
 
 void messageReceived(String &topic, String &payload) {
