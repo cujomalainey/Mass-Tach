@@ -17,6 +17,10 @@
 
 #define DISPLAY_ADDR 0x70
 
+#define DISPLAY_ERROR_BLINK_RATE 2
+
 // #define SERIAL_DEBUG_SEPARATOR ": "
+
+#define ARRAY_SIZE(x)  (sizeof(x) / sizeof((x)[0]))
 
 #endif // DEFINE_h

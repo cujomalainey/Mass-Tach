@@ -11,7 +11,7 @@
 #define WIFI_SSID_MAX_SIZE MAX_STR_LEN
 #define WIFI_PSK_MAX_SIZE MAX_STR_LEN
 
-/*
+/**
  * Pin and Harware Defines
  */
 #define ANT_RESET_PIN 33
@@ -23,16 +23,27 @@
 
 #define VBAT_PIN A13
 
+/**
+ * Serial port defines
+ */
 #define DEBUG_SERIAL Serial
+#define USB_SERIAL   Serial
 #define ANT_SERIAL   Serial1
 
 #define SERIAL_DEBUG_BAUD 115200
 
+#define SERIAL_DEBUG true
+
+/**
+ * Diagnostic Config
+ */
+
+#define DIAGNOSTIC_BOOT_ATTEMPTS 3
+#define DIAGNOSTIC_BOOT_TIME 1000
+
 /*
  * System Config
  */
-
-#define SERIAL_DEBUG true
 
 int whoami(void);
 size_t get_antplus_key(uint8_t* buf);
