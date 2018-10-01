@@ -9,6 +9,7 @@
 #include "config.h"
 #include "ant-controller.h"
 #include "secret.h"
+#include "display-controller.h"
 #include <SerialDebug.h>
 
 /*
@@ -58,10 +59,17 @@ static void ant_open_channel(uint8_t channel);
 void ant_init()
 {
     DEBUG("ANT: Init Started");
+    display_message(DISPLAY_ANT);
     pinMode(ANT_RESET_PIN, OUTPUT);
+    pinMode(ANT_BR1_PIN, OUTPUT);
+    pinMode(ANT_BR2_PIN, OUTPUT);
+    pinMode(ANT_BR3_PIN, OUTPUT);
     digitalWrite(ANT_RESET_PIN, HIGH);
+    digitalWrite(ANT_BR1_PIN, HIGH);
+    digitalWrite(ANT_BR2_PIN, LOW);
+    digitalWrite(ANT_BR3_PIN, HIGH);
 
-    // TODO move to dynamic baud rate
+    // TODO update baud rate
     ANT_SERIAL.begin(9600);
     ant.setSerial(ANT_SERIAL);
 
@@ -71,8 +79,15 @@ void ant_init()
 
 void ant_reset()
 {
-    ResetSystem rs = ResetSystem();
+    ResetSystem rs;
+    StartUpMessage sum;
     ant.send(rs);
+    ant.readPacket();
+    if(ant.waitFor(sum, ANT_BOOT_TIMEOUT)) {
+       display_error(DISPLAY_ANT);
+       DEBUG("ERROR: Failed to reboot ANT radio");
+       while(1){}
+    }
     memset(ant_channel_status, 0, sizeof(ant_channel_status));
 }
 

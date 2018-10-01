@@ -12,7 +12,7 @@
 #define WIFI_PSK_MAX_SIZE MAX_STR_LEN
 
 /**
- * Pin and Harware Defines
+ * ANT Pin and Harware Defines
  */
 #define ANT_RESET_PIN 33
 #define ANT_SLEEP_PIN 27
@@ -21,6 +21,14 @@
 #define ANT_BR2_PIN 21
 #define ANT_BR3_PIN 14
 
+/**
+ * ANT Software Defines
+ */
+#define ANT_BOOT_TIMEOUT 5000
+
+/**
+ * Battery Defines
+ * */
 #define VBAT_PIN A13
 
 /**
@@ -28,7 +36,7 @@
  */
 #define DEBUG_SERIAL Serial
 #define USB_SERIAL   Serial
-#define ANT_SERIAL   Serial1
+#define ANT_SERIAL   Serial2
 
 #define SERIAL_DEBUG_BAUD 115200
 
