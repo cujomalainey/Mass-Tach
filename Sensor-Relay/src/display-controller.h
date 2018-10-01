@@ -7,6 +7,7 @@ enum display_msgs {
     DISPLAY_CONF,
     DISPLAY_DIAG,
     DISPLAY_ME,
+    DISPLAY_MQTT,
     DISPLAY_USB,
     DISPLAY_WIFI,
     /* Count for compilation enforcement */

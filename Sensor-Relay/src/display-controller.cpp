@@ -15,6 +15,7 @@ static const char* display_strings[] = {
     "CONF",
     "DIAG",
     "ME!!",
+    "MQTT",
     "USB ",
     "WIFI",
 };

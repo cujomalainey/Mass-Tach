@@ -14,6 +14,7 @@
 #include <MQTT.h>
 #include <Battery.h>
 #include "mqtt-controller.h"
+#include "display-controller.h"
 #include "debug.h"
 #include "secret.h"
 
@@ -25,11 +26,13 @@ unsigned long lastMillis = 0;
 
 void connect() {
   DEBUG("MQTT: Init Started");
+  display_message(DISPLAY_WIFI);
   DEBUG("MQTT: checking WiFi...");
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
   }
   DEBUG("MQTT: WiFi connected");
+  display_message(DISPLAY_MQTT);
 
   DEBUG("MQTT: connecting...");
   while (!client.connect("arduino", "try", "try")) {

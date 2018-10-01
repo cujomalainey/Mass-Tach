@@ -9,6 +9,7 @@ static int diagnostic_check_input() {
 
 void diagnostic_init() {
     DEBUG("Diagnostic: Started wait for controller");
+    display_message(DISPLAY_DIAG);
     for (auto i = 0; i < DIAGNOSTIC_BOOT_ATTEMPTS; i++) {
 
     	USB_SERIAL.println("BOOT!");
