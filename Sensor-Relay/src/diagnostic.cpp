@@ -16,6 +16,7 @@ void diagnostic_init() {
 	delay(DIAGNOSTIC_BOOT_TIME / DIAGNOSTIC_BOOT_ATTEMPTS);
 
 	if (diagnostic_check_input()) {
+	    ESP.restart();
 	    break;
 	}
     }
