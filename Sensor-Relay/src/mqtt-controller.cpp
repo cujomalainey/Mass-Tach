@@ -23,6 +23,8 @@ MQTTClient client;
 Battery battery(3000, 4200, A13);
 
 unsigned long lastMillis = 0;
+char publishUri[URI_MAX_LEN];
+uint8_t nanoPbBuffer[NANOPB_MESSAGE_BUFFER_SIZE];
 
 void connect() {
   DEBUG("MQTT: Init Started");
