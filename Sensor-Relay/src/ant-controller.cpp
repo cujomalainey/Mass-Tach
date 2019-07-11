@@ -79,10 +79,14 @@ void ant_init()
 
 void ant_reset()
 {
-    ResetSystem rs;
     StartUpMessage sum;
-    ant.send(rs);
-    ant.readPacket();
+    digitalWrite(ANT_RESET_PIN, LOW);
+    digitalWrite(ANT_RESET_PIN, HIGH);
+    if(ant.waitFor(sum, ANT_BOOT_TIMEOUT)) {
+       display_error(DISPLAY_ANT);
+       DEBUG("ERROR: Failed to reboot ANT radio");
+       while(1){}
+    }
     if(ant.waitFor(sum, ANT_BOOT_TIMEOUT)) {
        display_error(DISPLAY_ANT);
        DEBUG("ERROR: Failed to reboot ANT radio");
