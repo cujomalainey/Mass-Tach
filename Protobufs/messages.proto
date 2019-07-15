@@ -1,0 +1,52 @@
+syntax = 'proto3';
+
+message ScanCommand {
+}
+
+message AssignCommand {
+}
+
+message RequestStatusCommand {
+}
+
+message IdentifyCommand {
+}
+
+message SetCountRateCommand {
+}
+
+message Command {
+    oneof type {
+        ScanCommand scan = 1;
+        AssignCommand assign = 2;
+        RequestStatusCommand request = 3;
+        IdentifyCommand identify = 4;
+        SetCountRateCommand countRate = 5;
+    }
+}
+
+message SystemStatus {
+}
+
+message SensorCountStatus {
+}
+
+message SystemFaultStatus {
+}
+
+message SystemBootStatus {
+}
+
+// Set in mqtt for event of unintended disconenct
+message TombStoneStatus {
+}
+
+message Status {
+    oneof type {
+        SystemStatus system = 1;
+        SensorCountStatus count = 2;
+        SystemFaultStatus fault = 3;
+        SystemBootStatus boot = 4;
+        TombStoneStatus tomb = 5;
+    }
+}
