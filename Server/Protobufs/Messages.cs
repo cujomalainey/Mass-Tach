@@ -22,25 +22,29 @@ public static partial class MessagesReflection {
   static MessagesReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg5tZXNzYWdlcy5wcm90byINCgtTY2FuQ29tbWFuZCIPCg1Bc3NpZ25Db21t",
-          "YW5kIhYKFFJlcXVlc3RTdGF0dXNDb21tYW5kIhEKD0lkZW50aWZ5Q29tbWFu",
-          "ZCIVChNTZXRDb3VudFJhdGVDb21tYW5kIswBCgdDb21tYW5kEhwKBHNjYW4Y",
-          "ASABKAsyDC5TY2FuQ29tbWFuZEgAEiAKBmFzc2lnbhgCIAEoCzIOLkFzc2ln",
-          "bkNvbW1hbmRIABIoCgdyZXF1ZXN0GAMgASgLMhUuUmVxdWVzdFN0YXR1c0Nv",
-          "bW1hbmRIABIkCghpZGVudGlmeRgEIAEoCzIQLklkZW50aWZ5Q29tbWFuZEgA",
-          "EikKCWNvdW50UmF0ZRgFIAEoCzIULlNldENvdW50UmF0ZUNvbW1hbmRIAEIG",
-          "CgR0eXBlIg4KDFN5c3RlbVN0YXR1cyITChFTZW5zb3JDb3VudFN0YXR1cyIT",
-          "ChFTeXN0ZW1GYXVsdFN0YXR1cyISChBTeXN0ZW1Cb290U3RhdHVzIhEKD1Rv",
-          "bWJTdG9uZVN0YXR1cyLAAQoGU3RhdHVzEh8KBnN5c3RlbRgBIAEoCzINLlN5",
-          "c3RlbVN0YXR1c0gAEiMKBWNvdW50GAIgASgLMhIuU2Vuc29yQ291bnRTdGF0",
-          "dXNIABIjCgVmYXVsdBgDIAEoCzISLlN5c3RlbUZhdWx0U3RhdHVzSAASIQoE",
-          "Ym9vdBgEIAEoCzIRLlN5c3RlbUJvb3RTdGF0dXNIABIgCgR0b21iGAUgASgL",
-          "MhAuVG9tYlN0b25lU3RhdHVzSABCBgoEdHlwZWIGcHJvdG8z"));
+          "Cg5tZXNzYWdlcy5wcm90byIgCgtTY2FuQ29tbWFuZBIRCglzY2FuX3RpbWUY",
+          "ASABKA0iUwoNQ2hhbm5lbENvbmZpZxISCgpjaGFubmVsX2lkGAEgASgNEhMK",
+          "C2RldmljZV90eXBlGAIgASgNEhkKEXRyYW5zbWlzc2lvbl90eXBlGAMgASgN",
+          "Ii8KDUFzc2lnbkNvbW1hbmQSHgoGY29uZmlnGAEgAygLMg4uQ2hhbm5lbENv",
+          "bmZpZyIWChRSZXF1ZXN0U3RhdHVzQ29tbWFuZCIRCg9JZGVudGlmeUNvbW1h",
+          "bmQiFQoTU2V0Q291bnRSYXRlQ29tbWFuZCLNAQoHQ29tbWFuZBIcCgRzY2Fu",
+          "GAEgASgLMgwuU2NhbkNvbW1hbmRIABIgCgZhc3NpZ24YAiABKAsyDi5Bc3Np",
+          "Z25Db21tYW5kSAASKAoHcmVxdWVzdBgDIAEoCzIVLlJlcXVlc3RTdGF0dXND",
+          "b21tYW5kSAASJAoIaWRlbnRpZnkYBCABKAsyEC5JZGVudGlmeUNvbW1hbmRI",
+          "ABIqCgpjb3VudF9yYXRlGAUgASgLMhQuU2V0Q291bnRSYXRlQ29tbWFuZEgA",
+          "QgYKBHR5cGUiDgoMU3lzdGVtU3RhdHVzIhMKEVNlbnNvckNvdW50U3RhdHVz",
+          "IhMKEVN5c3RlbUZhdWx0U3RhdHVzIhIKEFN5c3RlbUJvb3RTdGF0dXMiEQoP",
+          "VG9tYlN0b25lU3RhdHVzIsABCgZTdGF0dXMSHwoGc3lzdGVtGAEgASgLMg0u",
+          "U3lzdGVtU3RhdHVzSAASIwoFY291bnQYAiABKAsyEi5TZW5zb3JDb3VudFN0",
+          "YXR1c0gAEiMKBWZhdWx0GAMgASgLMhIuU3lzdGVtRmF1bHRTdGF0dXNIABIh",
+          "CgRib290GAQgASgLMhEuU3lzdGVtQm9vdFN0YXR1c0gAEiAKBHRvbWIYBSAB",
+          "KAsyEC5Ub21iU3RvbmVTdGF0dXNIAEIGCgR0eXBlYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ScanCommand), global::ScanCommand.Parser, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::AssignCommand), global::AssignCommand.Parser, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ScanCommand), global::ScanCommand.Parser, new[]{ "ScanTime" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ChannelConfig), global::ChannelConfig.Parser, new[]{ "ChannelId", "DeviceType", "TransmissionType" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::AssignCommand), global::AssignCommand.Parser, new[]{ "Config" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RequestStatusCommand), global::RequestStatusCommand.Parser, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::IdentifyCommand), global::IdentifyCommand.Parser, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::SetCountRateCommand), global::SetCountRateCommand.Parser, null, null, null, null),
@@ -82,12 +86,24 @@ public sealed partial class ScanCommand : pb::IMessage<ScanCommand> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public ScanCommand(ScanCommand other) : this() {
+    scanTime_ = other.scanTime_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public ScanCommand Clone() {
     return new ScanCommand(this);
+  }
+
+  /// <summary>Field number for the "scan_time" field.</summary>
+  public const int ScanTimeFieldNumber = 1;
+  private uint scanTime_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public uint ScanTime {
+    get { return scanTime_; }
+    set {
+      scanTime_ = value;
+    }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,12 +119,14 @@ public sealed partial class ScanCommand : pb::IMessage<ScanCommand> {
     if (ReferenceEquals(other, this)) {
       return true;
     }
+    if (ScanTime != other.ScanTime) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
+    if (ScanTime != 0) hash ^= ScanTime.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -122,6 +140,10 @@ public sealed partial class ScanCommand : pb::IMessage<ScanCommand> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+    if (ScanTime != 0) {
+      output.WriteRawTag(8);
+      output.WriteUInt32(ScanTime);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -130,6 +152,9 @@ public sealed partial class ScanCommand : pb::IMessage<ScanCommand> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
+    if (ScanTime != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScanTime);
+    }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -140,6 +165,9 @@ public sealed partial class ScanCommand : pb::IMessage<ScanCommand> {
   public void MergeFrom(ScanCommand other) {
     if (other == null) {
       return;
+    }
+    if (other.ScanTime != 0) {
+      ScanTime = other.ScanTime;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -152,6 +180,195 @@ public sealed partial class ScanCommand : pb::IMessage<ScanCommand> {
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
+        case 8: {
+          ScanTime = input.ReadUInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class ChannelConfig : pb::IMessage<ChannelConfig> {
+  private static readonly pb::MessageParser<ChannelConfig> _parser = new pb::MessageParser<ChannelConfig>(() => new ChannelConfig());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<ChannelConfig> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::MessagesReflection.Descriptor.MessageTypes[1]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ChannelConfig() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ChannelConfig(ChannelConfig other) : this() {
+    channelId_ = other.channelId_;
+    deviceType_ = other.deviceType_;
+    transmissionType_ = other.transmissionType_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ChannelConfig Clone() {
+    return new ChannelConfig(this);
+  }
+
+  /// <summary>Field number for the "channel_id" field.</summary>
+  public const int ChannelIdFieldNumber = 1;
+  private uint channelId_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public uint ChannelId {
+    get { return channelId_; }
+    set {
+      channelId_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "device_type" field.</summary>
+  public const int DeviceTypeFieldNumber = 2;
+  private uint deviceType_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public uint DeviceType {
+    get { return deviceType_; }
+    set {
+      deviceType_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "transmission_type" field.</summary>
+  public const int TransmissionTypeFieldNumber = 3;
+  private uint transmissionType_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public uint TransmissionType {
+    get { return transmissionType_; }
+    set {
+      transmissionType_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as ChannelConfig);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(ChannelConfig other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (ChannelId != other.ChannelId) return false;
+    if (DeviceType != other.DeviceType) return false;
+    if (TransmissionType != other.TransmissionType) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (ChannelId != 0) hash ^= ChannelId.GetHashCode();
+    if (DeviceType != 0) hash ^= DeviceType.GetHashCode();
+    if (TransmissionType != 0) hash ^= TransmissionType.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (ChannelId != 0) {
+      output.WriteRawTag(8);
+      output.WriteUInt32(ChannelId);
+    }
+    if (DeviceType != 0) {
+      output.WriteRawTag(16);
+      output.WriteUInt32(DeviceType);
+    }
+    if (TransmissionType != 0) {
+      output.WriteRawTag(24);
+      output.WriteUInt32(TransmissionType);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (ChannelId != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChannelId);
+    }
+    if (DeviceType != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeviceType);
+    }
+    if (TransmissionType != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TransmissionType);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(ChannelConfig other) {
+    if (other == null) {
+      return;
+    }
+    if (other.ChannelId != 0) {
+      ChannelId = other.ChannelId;
+    }
+    if (other.DeviceType != 0) {
+      DeviceType = other.DeviceType;
+    }
+    if (other.TransmissionType != 0) {
+      TransmissionType = other.TransmissionType;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          ChannelId = input.ReadUInt32();
+          break;
+        }
+        case 16: {
+          DeviceType = input.ReadUInt32();
+          break;
+        }
+        case 24: {
+          TransmissionType = input.ReadUInt32();
+          break;
+        }
       }
     }
   }
@@ -166,7 +383,7 @@ public sealed partial class AssignCommand : pb::IMessage<AssignCommand> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[1]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[2]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,12 +400,23 @@ public sealed partial class AssignCommand : pb::IMessage<AssignCommand> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public AssignCommand(AssignCommand other) : this() {
+    config_ = other.config_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public AssignCommand Clone() {
     return new AssignCommand(this);
+  }
+
+  /// <summary>Field number for the "config" field.</summary>
+  public const int ConfigFieldNumber = 1;
+  private static readonly pb::FieldCodec<global::ChannelConfig> _repeated_config_codec
+      = pb::FieldCodec.ForMessage(10, global::ChannelConfig.Parser);
+  private readonly pbc::RepeatedField<global::ChannelConfig> config_ = new pbc::RepeatedField<global::ChannelConfig>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<global::ChannelConfig> Config {
+    get { return config_; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -204,12 +432,14 @@ public sealed partial class AssignCommand : pb::IMessage<AssignCommand> {
     if (ReferenceEquals(other, this)) {
       return true;
     }
+    if(!config_.Equals(other.config_)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
+    hash ^= config_.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -223,6 +453,7 @@ public sealed partial class AssignCommand : pb::IMessage<AssignCommand> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
+    config_.WriteTo(output, _repeated_config_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -231,6 +462,7 @@ public sealed partial class AssignCommand : pb::IMessage<AssignCommand> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
+    size += config_.CalculateSize(_repeated_config_codec);
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -242,6 +474,7 @@ public sealed partial class AssignCommand : pb::IMessage<AssignCommand> {
     if (other == null) {
       return;
     }
+    config_.Add(other.config_);
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -253,6 +486,10 @@ public sealed partial class AssignCommand : pb::IMessage<AssignCommand> {
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
+        case 10: {
+          config_.AddEntriesFrom(input, _repeated_config_codec);
+          break;
+        }
       }
     }
   }
@@ -267,7 +504,7 @@ public sealed partial class RequestStatusCommand : pb::IMessage<RequestStatusCom
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[2]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[3]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -368,7 +605,7 @@ public sealed partial class IdentifyCommand : pb::IMessage<IdentifyCommand> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[3]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[4]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -469,7 +706,7 @@ public sealed partial class SetCountRateCommand : pb::IMessage<SetCountRateComma
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[4]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[5]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -570,7 +807,7 @@ public sealed partial class Command : pb::IMessage<Command> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[5]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[6]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -657,7 +894,7 @@ public sealed partial class Command : pb::IMessage<Command> {
     }
   }
 
-  /// <summary>Field number for the "countRate" field.</summary>
+  /// <summary>Field number for the "count_rate" field.</summary>
   public const int CountRateFieldNumber = 5;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public global::SetCountRateCommand CountRate {
@@ -891,7 +1128,7 @@ public sealed partial class SystemStatus : pb::IMessage<SystemStatus> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[6]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[7]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -992,7 +1229,7 @@ public sealed partial class SensorCountStatus : pb::IMessage<SensorCountStatus> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[7]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[8]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1093,7 +1330,7 @@ public sealed partial class SystemFaultStatus : pb::IMessage<SystemFaultStatus> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[8]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[9]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1194,7 +1431,7 @@ public sealed partial class SystemBootStatus : pb::IMessage<SystemBootStatus> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[9]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[10]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1298,7 +1535,7 @@ public sealed partial class TombStoneStatus : pb::IMessage<TombStoneStatus> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[10]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[11]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1399,7 +1636,7 @@ public sealed partial class Status : pb::IMessage<Status> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::MessagesReflection.Descriptor.MessageTypes[11]; }
+    get { return global::MessagesReflection.Descriptor.MessageTypes[12]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

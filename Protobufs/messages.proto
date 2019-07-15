@@ -1,9 +1,17 @@
 syntax = 'proto3';
 
 message ScanCommand {
+    uint32 scan_time = 1;
+}
+
+message ChannelConfig {
+    uint32 channel_id = 1;
+    uint32 device_type = 2;
+    uint32 transmission_type = 3;
 }
 
 message AssignCommand {
+    repeated ChannelConfig config = 1;
 }
 
 message RequestStatusCommand {
@@ -21,7 +29,7 @@ message Command {
         AssignCommand assign = 2;
         RequestStatusCommand request = 3;
         IdentifyCommand identify = 4;
-        SetCountRateCommand countRate = 5;
+        SetCountRateCommand count_rate = 5;
     }
 }
 
