@@ -30,14 +30,14 @@ static uint8_t num_active_channels = 0;
 static uint32_t next_data_transmit = 0;
 
 typedef struct {
-   uint8_t device_type;
-   uint16_t channel_period;
+    uint8_t device_type;
+    uint16_t channel_period;
 } ant_sensor_config_type;
 
 typedef struct {
-   bool active;
-   uint16_t last_count;
-   uint16_t current_count;
+    bool active;
+    uint16_t last_count;
+    uint16_t current_count;
 } ant_channel_status_type;
 
 // Indices match ant_device_type
